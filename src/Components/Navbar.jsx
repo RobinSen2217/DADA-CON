@@ -12,7 +12,7 @@ function Navbar() {
       <a className="mr-5 hover:text-white hover:cursor-pointer">Third Link</a>
       <a className="hover:text-white hover:cursor-pointer">Fourth Link</a>
     </nav> */}
-    <img src="/dumLogo.png" alt="logo" className='inline w-14 h-17' />
+    <img src="/dumLogo.png" alt="logo" className='inline w-36 h-18 rounded-md' />
 
 </header>
     </div>

@@ -17,6 +17,9 @@ import BakeProducts from "./Components/BakeProducts";
 import Chatbot from "./Components/ChatBot";
 import DadaNav from "./Components/DadaNav";
 import DadaHero from "./Components/DadaHero";
+import Notices from "./Components/Notices";
+import DadaFoot from "./Components/DadaFoot";
+import Devices from "./Components/Devices";
 
 function App() {
   return (
@@ -38,6 +41,21 @@ function App() {
       <>
     <DadaNav/>
     <DadaHero/>
+    <Devices/>
+    <DadaFoot/>
+    </>}/>
+
+    <Route exact path="/dada/notice"
+    element={
+    <>
+    <DadaNav/>
+    <Notices/>
+    <DadaFoot/>
+    </>}
+    />
+    <Route exact path="/device" element={<>
+    <DadaNav/>
+    <DadaFoot/>
     </>}/>
       </Routes>
     </Router>
