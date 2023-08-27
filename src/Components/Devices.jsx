@@ -9,13 +9,28 @@ import 'swiper/css/navigation';
 import './Devices.css'
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+const slides=[{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+},
+{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+},
+{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+}]
 
-const slides=[{url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'},{url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'},{url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'}]
+let index
 
-function App() {
+function Devices() {
+    
+const sendData= (event)=>{
+    // let index= event.target.key
+    index=event.target.getAttribute('id')
+    // export index
+}
   return (
     <div className="container">
-      <h1 className="text-center text-5xl">Our Devices</h1>
+      <h1 className="text-center text-5xl font-Spy">Our Devices</h1>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -45,25 +60,22 @@ function App() {
             )
         })} */}
         <SwiperSlide>
-          <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+          <Link onClick={sendData} to='/device'><img  id='0' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+        <Link onClick={sendData} to='/device' ><img id='1' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='2' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='3' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+        <Link onClick={sendData} to='/device' ><img id='5' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
-        </SwiperSlide>
-        <SwiperSlide>
-        <Link to='/device'><img src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='6' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
 
         <div className="slider-controler">
@@ -80,4 +92,7 @@ function App() {
   );
 }
 
-export default App;
+
+export default Devices;
+
+export {index}

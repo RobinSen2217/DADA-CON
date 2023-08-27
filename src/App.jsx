@@ -20,6 +20,7 @@ import DadaHero from "./Components/DadaHero";
 import Notices from "./Components/Notices";
 import DadaFoot from "./Components/DadaFoot";
 import Devices from "./Components/Devices";
+import Device from "./Components/Device";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
     />
     <Route exact path="/device" element={<>
     <DadaNav/>
+    <Device/>
     <DadaFoot/>
     </>}/>
       </Routes>
