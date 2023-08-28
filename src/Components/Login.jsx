@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
+import Spinner from './Spinner'
 
 const Login = () => {
-// document.body.style.backgroundImage='/loginBg.jpg'
+    document.title='Login'
+    const navigate=useNavigate()
+    const [loading,setLoading]=useState(false)
   const [formData, setFormData] = useState({
-    username: '',
+    // username: '',
     email: '',
     password: '',
     confirmPassword: ''
   })
+  const [vis,setVis]=useState(0)
 
   const [errors, setErrors] = useState({})
 
@@ -18,63 +24,62 @@ const Login = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
     const validationErrors = {}
-    if(!formData.username.trim()) {
-        validationErrors.username = "username is required"
-    }
+    // if(!formData.username.trim()) {
+    //     validationErrors.username = "username is required"
+    // }
 
     if(!formData.email.trim()) {
-        validationErrors.email = "email is required"
+        validationErrors.email = "Username is required"
     } else if(!/\S+@\S+\.\S+/.test(formData.email)){
-        validationErrors.email = "email is not valid"
+        validationErrors.email = "Username is not valid"
     }
 
     if(!formData.password.trim()) {
-        validationErrors.password = "password is required"
+        validationErrors.password = "Password is required"
     } else if(formData.password.length < 6){
-        validationErrors.password = "password should be at least 6 char"
+        validationErrors.password = "Password should be at least 6 characters"
     }
 
     if(formData.confirmPassword !== formData.password) {
-        validationErrors.confirmPassword = "password not matched"
+        validationErrors.confirmPassword = "Password not matched"
     }
 
     setErrors(validationErrors)
 
     if(Object.keys(validationErrors).length === 0) {
-        alert("Form Submitted successfully")
-    }
+        setLoading(true)
+        axios.post('https://dadacon.onrender.com/auth/login/',{username:formData.email,password:formData.password}).then((res)=>{
+            console.log(res.status)
+            if (res.status===200){
+                navigate('/dada')
+            }
+        }).catch((errors)=>{
+            // document.write('Access denied')
+            setLoading(false)
+            setVis(1)
+        })
+            }
 
   }
 
   return (
-    <div className="flex justify-center items-center w-screen h-screen text-white bg-[url('/loginBg.jpg')] ">
-        <form onSubmit={handleSubmit} className='h-[450px] shadow-2xl shadow-gray-300/40  w-96 bg-black/80 grid grid-cols-1 grid-rows-5 gap-y-4 rounded-lg p-5'>
+    <div className="flex flex-col justify-center items-center w-screen h-screen text-white bg-[url('/loginBg.jpg')] ">
+        <form onSubmit={handleSubmit} className=' h-[380px] shadow-2xl shadow-gray-300/40  w-96 bg-black/80 grid grid-cols-1 grid-rows-4 gap-y-3 rounded-lg p-5'>
+
       <div>
         <label className='block font-semibold '>Username:</label>
         <input
         className='w-full p-1 text-black'
-          type="text"
-          name="username"
-          placeholder='username'  
-          autoComplete='off'  
-          onChange={handleChange}   
-        />
-          {errors.username && <span>{errors.username}</span>}  
-      </div>
-      <div>
-        <label className='block font-semibold '>Email:</label>
-        <input
-        className='w-full p-1 text-black'
           type="email"
           name="email"
-          placeholder='example@gmail.com'
+        //   placeholder='example@gmail.com'
           autoComplete='off'
           onChange={handleChange} 
         />
-          {errors.email && <span>{errors.email}</span>}  
+          {errors.email && <span className='text-red-400'>{errors.email}</span>}  
       </div>
       <div>
         <label className='block font-semibold '>Password:</label>
@@ -85,7 +90,7 @@ const Login = () => {
           placeholder='******'
           onChange={handleChange} 
         />
-          {errors.password && <span>{errors.password}</span>}  
+          {errors.password && <span className='text-red-400'>{errors.password}</span>}  
       </div>
       <div>
         <label className='block font-semibold'>Confirm Password:</label>
@@ -96,10 +101,15 @@ const Login = () => {
           placeholder='******'
           onChange={handleChange} 
         />
-          {errors.confirmPassword && <span>{errors.confirmPassword}</span>}  
+          {errors.confirmPassword && <span className='text-red-400'>{errors.confirmPassword}</span>}  
       </div>
-      <button className='bg-purple-600 font-semibold text-white hover:bg-[#2980b9] rounded-lg h-14' type="submit">Submit</button>
+      <div className='flex flex-col '>
+      <button className='bg-purple-600 w-full font-semibold text-white hover:bg-[#2980b9] rounded-lg h-14' type="submit">Submit</button>
+      {vis?<span className='text-red-400 block'>Access denied</span>:''}
+      </div>
     </form>
+    {loading && <Spinner/>}
+
     </div>
 
   );
