@@ -17,30 +17,26 @@ const slides=[{
 },
 {
     url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
-}]
+}
+,
+{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+},
+{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+},
+{
+    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+}
+]
 
 let index
 
-function Devices() {
+function Devices(props) {
     
 const sendData= (event)=>{
-    // let index= event.target.key
     index=event.target.getAttribute('id')
-    // export index
-
-    
-// const stopMovie = (e) => {
-//   e.target.pause();
-//   console.log('off');
-// }
-
-// const playMovie = (e) => {
-//   e.target.play();
-//   console.log('on');
-// }
-
-
-}
+ }
   return (
     <div className="container">
       <h1 className="text-center text-5xl font-Spy">Our Devices</h1>
@@ -75,14 +71,9 @@ const sendData= (event)=>{
 
 
         <SwiperSlide>
-          <Link onClick={sendData} to='/device'><video loop id='0'
-  poster={slides[0].url}
-  onMouseOver={event => event.target.play()}
-  onMouseOut={event => event.target.pause()}
-  src='/videos/pendrive.mp4' >
-</video></Link>
+          <Link onClick={sendData} to='/device'><img src={slides[0].url} id='0' alt="slide_image" /></Link>
         </SwiperSlide>
-        
+
         <SwiperSlide>
         <Link onClick={sendData} to='/device' ><img id='1' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
@@ -93,10 +84,10 @@ const sendData= (event)=>{
         <Link to='/device' onClick={sendData} ><img id='3' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link onClick={sendData} to='/device' ><img id='5' src={slides[0].url} alt="slide_image" /></Link>
+        <Link onClick={sendData} to='/device' ><img id='4' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device' onClick={sendData} ><img id='6' src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='5' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
 
         <div className="slider-controler">

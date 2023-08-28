@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -23,6 +23,7 @@ import Devices from "./Components/Devices";
 import Device from "./Components/Device";
 
 function App() {
+
   return (
     <Router>
       <Routes>
