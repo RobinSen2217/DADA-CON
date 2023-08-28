@@ -27,6 +27,19 @@ const sendData= (event)=>{
     // let index= event.target.key
     index=event.target.getAttribute('id')
     // export index
+
+    
+// const stopMovie = (e) => {
+//   e.target.pause();
+//   console.log('off');
+// }
+
+// const playMovie = (e) => {
+//   e.target.play();
+//   console.log('on');
+// }
+
+
 }
   return (
     <div className="container">
@@ -59,9 +72,17 @@ const sendData= (event)=>{
               </SwiperSlide>
             )
         })} */}
+
+
         <SwiperSlide>
-          <Link onClick={sendData} to='/device'><img  id='0' src={slides[0].url} alt="slide_image" /></Link>
+          <Link onClick={sendData} to='/device'><video loop id='0'
+  poster={slides[0].url}
+  onMouseOver={event => event.target.play()}
+  onMouseOut={event => event.target.pause()}
+  src='/videos/pendrive.mp4' >
+</video></Link>
         </SwiperSlide>
+        
         <SwiperSlide>
         <Link onClick={sendData} to='/device' ><img id='1' src={slides[0].url} alt="slide_image" /></Link>
         </SwiperSlide>
