@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { index } from './Devices'
 
 const info=[
     {
-        src:'',
+        src:'/videos/pendrive.mp4',
         title:'SonicSight Sunglasses',
         description:'Elegant sunglasses with concealed cameras and microphones, featuring augmented reality overlays for amplified intelligence gathering. ',
         bullets:['Stylish sunglasses with inconspicuous built-in cameras and microphones.',
             'Augmented reality overlays for enhanced intelligence gathering.',
-            "Seeing More Than Meets the Eye.",
+            "Seeing More Than What Meets the Eye.",
             ],
         color:'Black',
         size:'Small'
@@ -82,18 +82,16 @@ const info=[
     }
 ]
 
-function Device(props) {
+function Device() {
     const ind=Number(index)
     const [Btn,switchBtn]=useState(0)
 
-const changeInfo=()=>{
-    if (Btn===0){
-        switchBtn(1)
-    }
-    else{
+const clickDes=()=>{
         switchBtn(0)
     }
-}
+const clickFet=()=>{
+        switchBtn(1)
+    }
 
   return (
     <div className='text-white'>
@@ -103,8 +101,8 @@ const changeInfo=()=>{
       <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
         <h1 className="text-gray-900 text-3xl title-font font-medium font-Spy mb-4">{info[ind].title}</h1>
         <div className="flex mb-4">
-          <a onClick={changeInfo} className={`flex-grow border-b-2  ${Btn===0?'border-cyan-400 text-cyan-400':'border-gray-300'} py-2 text-lg px-1 hover:cursor-pointer`}>Description</a>
-          <a onClick={changeInfo} className={`flex-grow border-b-2  ${Btn!==0?'border-cyan-400 text-cyan-400':'border-gray-300'} py-2 text-lg px-1 hover:cursor-pointer`}>Features</a>
+          <a onClick={clickDes} className={`flex-grow border-b-2  ${Btn===0?'border-cyan-400 text-cyan-400':'border-gray-300'} py-2 text-lg px-1 hover:cursor-pointer`}>Description</a>
+          <a onClick={clickFet} className={`flex-grow border-b-2  ${Btn!==0?'border-cyan-400 text-cyan-400':'border-gray-300'} py-2 text-lg px-1 hover:cursor-pointer`}>Features</a>
         </div>
       {Btn===0?<><p className="leading-relaxed mb-4">{info[ind].description}</p><div className="flex border-t border-gray-200 py-2">
         <span className="text-white">Color</span>
@@ -123,7 +121,8 @@ const changeInfo=()=>{
                 </ul>
             </>}
       </div>
-      <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400"/>
+      <video autoplay='autoplay' loop alt="ecommerce" className="lg:w-1/2 w-full h-[400px] object-cover object-center rounded" ><source src={info[ind].src} /></video>
+
     </div>
   </div>
 </section>

@@ -58,7 +58,7 @@ function App() {
     <Route exact path="/device" element={<>
     <DadaNav/>
     <Device/>
-    <DadaFoot/>
+    <DadaFoot style={'absolute bottom-0'}/>
     </>}/>
       </Routes>
     </Router>

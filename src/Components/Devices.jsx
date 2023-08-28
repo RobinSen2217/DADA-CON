@@ -32,7 +32,7 @@ const slides=[{
 
 let index
 
-function Devices(props) {
+function Devices(){
     
 const sendData= (event)=>{
     index=event.target.getAttribute('id')
