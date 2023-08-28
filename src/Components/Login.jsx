@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Login = () => {
-    // document.body.style.backgroundImage=''
+// document.body.style.backgroundImage='/loginBg.jpg'
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -50,8 +50,8 @@ const Login = () => {
   }
 
   return (
-    <div className='flex justify-center items-center w-screen h-screen text-white'>
-        <form onSubmit={handleSubmit} className='h-[450px] w-96 bg-black/80 grid grid-cols-1 grid-rows-5 gap-y-4 rounded-lg p-5'>
+    <div className="flex justify-center items-center w-screen h-screen text-white bg-[url('/loginBg.jpg')] ">
+        <form onSubmit={handleSubmit} className='h-[450px] shadow-2xl shadow-gray-300/40  w-96 bg-black/80 grid grid-cols-1 grid-rows-5 gap-y-4 rounded-lg p-5'>
       <div>
         <label className='block font-semibold '>Username:</label>
         <input
