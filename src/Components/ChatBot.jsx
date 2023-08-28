@@ -53,7 +53,7 @@ const steps = [
         user:true,
         validator: (value) => {
             if (value==='BirdIsTheWord') {
-              navigate('/dada');
+              navigate('/login');
             }
             return true;
         },

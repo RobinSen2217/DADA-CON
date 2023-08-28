@@ -21,6 +21,7 @@ import Notices from "./Components/Notices";
 import DadaFoot from "./Components/DadaFoot";
 import Devices from "./Components/Devices";
 import Device from "./Components/Device";
+import Login from "./Components/Login";
 
 function App() {
 
@@ -37,6 +38,11 @@ function App() {
     <SubFooter/>
     <Footer/>
     </>}/> 
+
+    <Route exact path="/login" element={
+    <>
+    <Login/>
+    </>}/>
 
     <Route exact path="/dada"
     element={

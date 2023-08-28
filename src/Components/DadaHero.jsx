@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 
 function DadaHero() {
   return (
-    <div className=' text-white text-5xl font-extrabold'>
+    <div className=" text-white text-7xl flex items-end pb-3 pl-2 font-extrabold bg-[url('/bgcompressed.png')] h-[300px]">
 
           <Typewriter
             words={['Unseen.', 'Unheard.', 'Unmatched.']}
