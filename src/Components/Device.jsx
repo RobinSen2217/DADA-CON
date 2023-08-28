@@ -3,7 +3,7 @@ import { index } from './Devices'
 
 const info=[
     {
-        src:'/videos/pendrive.mp4',
+        src:'/videos/SonicSight Sunglasses.mp4',
         title:'SonicSight Sunglasses',
         description:'Elegant sunglasses with concealed cameras and microphones, featuring augmented reality overlays for amplified intelligence gathering. ',
         bullets:['Stylish sunglasses with inconspicuous built-in cameras and microphones.',
@@ -15,7 +15,7 @@ const info=[
 
     },{
         
-        src:'',
+        src:'/videos/ChronoNote Wristwatch.mp4',
         title:'ChronoNote Wristwatch',
         description:'Classic wristwatch with a hidden digital display for live location tracking and secure messaging via invisible ink technology and encrypted real-time updates.',
         bullets:['Classic wristwatch design concealing a high-tech digital display.',
@@ -29,7 +29,7 @@ const info=[
 
     },{
         
-        src:'',
+        src:'/videos/cubotage.mp4',
         title:'Cubeotage Emissary',
         description:'An inconspicuous cube for covert operations that opens automatically to disrupt signals, leaving no trace behind.',
         bullets:['An inconspicuous cube for covert operations',
@@ -42,7 +42,7 @@ const info=[
 
     },{
         
-        src:'',
+        src:'/videos/scanosphere.mp4',
         title:'Scanosphere Scanner',
         description:'Pocket-sized portable scanner that digitizes documents via LIDAR, embedding hidden watermarks for agent identification.',
         bullets:['Portable scanner resembling a pocket-sized book.',
@@ -55,7 +55,7 @@ const info=[
 
     },{
         
-        src:'',
+        src:'/videos/nexttechbriefcase.mp4',
         title:'NexTech Briefcase',
         description:' A high-end leather briefcase with integrated biometric lock, concealing a secure communication hub and holographic document projection for covert presentations',
         bullets:['Crafted from high-end leather, embodying sophistication and quality.',
@@ -67,7 +67,7 @@ const info=[
 
     },{
         
-        src:'',
+        src:'/videos/pendrive.mp4',
         title:'StealthSync Data Beacon',
         description:' Disguised as a USB drive, it wields advanced tech for undetectable data transfer. Auto-wipes post-transmission ensure security. "Sync in Stealth, Transmit in Silence.',
         bullets:['Disguised as a USB drive equipped with advanced tech.',

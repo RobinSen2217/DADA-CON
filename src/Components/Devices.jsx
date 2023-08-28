@@ -10,23 +10,23 @@ import './Devices.css'
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 const slides=[{
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/SonicSightSunglasses.png'
 },
 {
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/ChronoNoteWatch.png'
 },
 {
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/Cubotage.png'
 }
 ,
 {
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/Scanosphere.png'
 },
 {
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/NexTech Briefcase.png'
 },
 {
-    url:'https://lh3.googleusercontent.com/yt5FGbyvBSoAYuOAh7zW-R91NtRXs4HTR1uggdhNuWb3WdkfAEUGKbCGERsCGdgww_l2JdVbYcOtVnfZawyW2vV3IjxDx8s29M7hHvxJthCRFA=w1440-e365'
+    url:'/stealthsyncdatabeacon.png'
 }
 ]
 
@@ -75,19 +75,19 @@ const sendData= (event)=>{
         </SwiperSlide>
 
         <SwiperSlide>
-        <Link onClick={sendData} to='/device' ><img id='1' src={slides[0].url} alt="slide_image" /></Link>
+        <Link onClick={sendData} to='/device' ><img id='1' src={slides[1].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device' onClick={sendData} ><img id='2' src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='2' src={slides[2].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device' onClick={sendData} ><img id='3' src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='3' src={slides[3].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link onClick={sendData} to='/device' ><img id='4' src={slides[0].url} alt="slide_image" /></Link>
+        <Link onClick={sendData} to='/device' ><img id='4' src={slides[4].url} alt="slide_image" /></Link>
         </SwiperSlide>
         <SwiperSlide>
-        <Link to='/device' onClick={sendData} ><img id='5' src={slides[0].url} alt="slide_image" /></Link>
+        <Link to='/device' onClick={sendData} ><img id='5' src={slides[5].url} alt="slide_image" /></Link>
         </SwiperSlide>
 
         <div className="slider-controler">
