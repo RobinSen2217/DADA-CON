@@ -17,7 +17,6 @@ const navigate=useNavigate(data)
 
     const redirect=(e)=>{
       let username=e.target.id
-  
       navigate('/chat')
         // axios.post('https://dadacon.onrender.com/auth/logout/',{username:users}, {headers: {
         //   'Authorization': 'Bearer '+ data

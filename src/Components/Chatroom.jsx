@@ -72,7 +72,9 @@ const morseC = {
 const messages=['Hello']
 
 function Chatroom() {
-  localStorage.setItem('username',JSON.stringify(['Hello']))
+
+  localStorage.setItem('username',JSON.stringify(messages))
+
     function Encode(text) {
         if (!text || typeof text !== "string") throw new Error("Invalid input");
         const data = text.toLowerCase().split("");
