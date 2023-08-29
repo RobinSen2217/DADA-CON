@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { index } from './Devices'
+
 
 const info=[
     {
@@ -83,7 +83,8 @@ const info=[
 ]
 
 function Device() {
-    const ind=Number(index)
+   
+const ind=Number(JSON.parse(localStorage.getItem('device_index')))
     const [Btn,switchBtn]=useState(0)
 
 const clickDes=()=>{
@@ -123,7 +124,7 @@ const clickFet=()=>{
             </>}
             </div>
       </div>
-      <video autoPlay='autoplay' loop alt="ecommerce" className="lg:w-1/2 w-full h-[395px] object-cover object-center rounded-lg" ><source src={info[ind].src} /></video>
+      <video autoPlay='autoplay' muted='muted' loop alt="ecommerce" className="lg:w-1/2 w-full h-[395px] object-cover object-center rounded-lg" ><source src={info[ind].src} /></video>
 
     </div>
   </div>

@@ -15,16 +15,22 @@ const navigate=useNavigate(data)
   //   setLoading(false);
   // }, []);
 
-    const redirect=()=>{
-        axios.post('https://dadacon.onrender.com/auth/logout/',{username:users}, {headers: {
-          'Authorization': 'Bearer '+ data
-      }}).then((res)=>{
-        console.log(data);
-          console.log(res.status)
-          if(res.status===204){
-            navigate('/chat')
-          }
-        })
+    const redirect=(e)=>{
+      let username=e.target.id
+      localStorage.setItem(username,JSON.stringify(['Hello']))
+      navigate('/chat')
+        // axios.post('https://dadacon.onrender.com/auth/logout/',{username:users}, {headers: {
+        //   'Authorization': 'Bearer '+ data
+      // }
+    // }
+    // )
+    // .then((res)=>{
+    //     console.log(data);
+    //       console.log(res.status)
+    //       if(res.status===204){
+    //         navigate('/chat')
+    //       }
+    //     })
        }
        const [loading,setLoading]=useState(true)
 
@@ -34,7 +40,7 @@ const navigate=useNavigate(data)
             {/* {loading && <Spinner/>} */}
       <div className="flex flex-col w-1/3 mx-auto ">
 <div className="grid grid-cols-1 gap-y-1">
-<button onclick={redirect} className=" text-2xl p-5 shadow-gray-900/90 rounded-lg shadow-xl bg-gray-800 hover:cursor-pointer hover:bg-gray-600 min-[470px]:text-4xl font-semibold text-white mb-1 text-left ">Title</button>
+<button onClick={redirect} id='username' className=" text-2xl p-5 shadow-gray-900/90 rounded-lg shadow-xl bg-gray-800 hover:cursor-pointer hover:bg-gray-600 min-[470px]:text-4xl font-semibold text-white mb-1 text-left ">Title</button>
 
 
 </div>

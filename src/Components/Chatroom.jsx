@@ -69,7 +69,7 @@ const morseC = {
     "Ü": "..__"
 };
 
-const messages=['Lorem ipsum dolor sit, amet consectetur adipisicing. ?']
+const messages=['Hello']
 
 function Chatroom() {
     
@@ -96,8 +96,6 @@ function Chatroom() {
 
             const [message, setMessage] = useState('');
             const [morse,setMorse]=useState(false)
-            console.log(morse)
-
 
         const sendMsg=async()=>{
         let msg
@@ -110,9 +108,8 @@ function Chatroom() {
             console.log(msg)
         }
         // document.getElementById('wall').innerHTML+= `<div class="p-3 rounded-lg"><div class="flex items-center justify-start flex-row-reverse"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">ME</div><div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"><div>${message} ?</div></div></div></div>`
-        // const elem = document.getElementById('wall');
-        // elem.scrollTop = elem.scrollHeight;
         messages.push(message)
+        localStorage.setItem('username',JSON.stringify(messages))
         setMessage('')
 
         await axios.post('http://localhost:5000/message',{
@@ -129,8 +126,8 @@ function Chatroom() {
         }else{
             setMessage(Encode(message))
         }}catch(e){
-            setMorse(false)}
-    }
+            setMorse(false)
+    }}
 
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -152,7 +149,7 @@ function Chatroom() {
               <div class="flex flex-col items-end gap-y-2 h-full " id='wall'>
 
 
-            {messages.map((m,i)=>{
+            {JSON.parse(localStorage.getItem('username')).map((m,i)=>{
                 return(
                     <div key={i} class="p-3 rounded-lg">
                     <div class="flex items-center justify-start flex-row-reverse">
@@ -173,7 +170,8 @@ function Chatroom() {
                   </div>
                 )
             })   
-                }
+            }
+          
    
 
                 </div>
