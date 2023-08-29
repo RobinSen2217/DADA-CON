@@ -111,7 +111,7 @@ function Chatroom() {
         }
         // document.getElementById('wall').innerHTML+= `<div class="p-3 rounded-lg"><div class="flex items-center justify-start flex-row-reverse"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">ME</div><div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"><div>${message} ?</div></div></div></div>`
         messages.push(message)
-        localStorage.setItem('username',JSON.stringify(messages))
+        localStorage.setItem('username',JSON.stringify('Hello'))
         setMessage('')
 
         await axios.post('http://localhost:5000/message',{
