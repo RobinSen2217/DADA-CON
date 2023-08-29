@@ -27,6 +27,7 @@ function DadaNav({data}) {
     console.log(data);
       console.log(res.status)
       if(res.status===204){
+        localStorage.clear()
         navigate('/login')
       }
     })
@@ -38,13 +39,13 @@ function DadaNav({data}) {
     <div>
       <header className="text-gray-600 bg-purple-600 body-font">
   <div className="container mx-auto flex flex-wrap p-2  flex-row items-center justify-between">
-    <a className="flex title-font font-medium items-center text-gray-900 mb-0">
+    <a className="flex title-font font-medium items-center text-gray-900 mb-0 max-[456px]:mx-auto">
    <img src="/dadaLogo.png" alt="dadaLogo" className='min-[410px]:h-16 h-12'/>
-      <Link to='/dada' className="ml-3 text-lg min-[480px]:text-3xl font-semibold font-Spy hover:cursor-pointer">DADA-CON</Link>
+      <Link to='/dada' className="ml-3 text-lg min-[480px]:text-3xl font-semibold font-Spy hover:cursor-pointer pr-2">DADA-CON</Link>
     </a>
-    <nav className="md:ml-auto flex flex-wrap items-center text-white justify-center">
+    <nav className="md:ml-auto max-[456px]:mx-auto flex flex-wrap items-center text-white justify-center">
       <Link className="mr-5 hover:cursor-pointer hover:text-gray-900" to='/notice'>Notices</Link>
-      <Link className="mr-5 hover:text-gray-900 hover:cursor-pointer" >Chat Room</Link>
+      <Link to='/user' className="mr-5 hover:text-gray-900 hover:cursor-pointer" >Chat Room</Link>
       <Link onClick={handleLogout} className=" hover:cursor-pointer bg-white text-blue-500 border border-blue-500 px-2 py-1 rounded-md hover:bg-cyan-500 hover:text-white hover:border-white" >Logout</Link>
     </nav>
 

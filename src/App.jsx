@@ -22,6 +22,8 @@ import DadaFoot from "./Components/DadaFoot";
 import Devices from "./Components/Devices";
 import Device from "./Components/Device";
 import Login from "./Components/Login";
+import Chatroom from "./Components/Chatroom";
+import Users from "./Components/Users";
 
 function App() {
 const [data,sendData]=useState('')
@@ -67,9 +69,21 @@ const [data,sendData]=useState('')
     <Device/>
     <DadaFoot/>
     </>}/>
+    <Route exact path='/chat' element={<>
+    <DadaNav data={data}/>
+    <Chatroom/>
+    <DadaFoot/>
+    </>}/>
+    <Route exact path='/user' element={<>
+    <DadaNav data={data}/>
+    <Users data={data}/>
+    <DadaFoot/>
+    </>}/>
+      
       </Routes>
     </Router>
   )
+
 }
 
 export default App
