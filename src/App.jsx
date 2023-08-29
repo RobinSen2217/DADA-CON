@@ -24,6 +24,7 @@ import Device from "./Components/Device";
 import Login from "./Components/Login";
 
 function App() {
+const [data,sendData]=useState('')
 
   return (
     <Router>
@@ -41,30 +42,30 @@ function App() {
 
     <Route exact path="/login" element={
     <>
-    <Login/>
+    <Login sendData={sendData}/>
     </>}/>
 
     <Route exact path="/dada"
     element={
       <>
-    <DadaNav/>
+    <DadaNav data={data}/>
     <DadaHero/>
     <Devices/>
     <DadaFoot/>
     </>}/>
 
-    <Route exact path="/dada/notice"
+    <Route exact path="/notice"
     element={
     <>
-    <DadaNav/>
+    <DadaNav data={data}/>
     <Notices/>
     <DadaFoot/>
     </>}
     />
     <Route exact path="/device" element={<>
-    <DadaNav/>
+    <DadaNav data={data}/>
     <Device/>
-    <DadaFoot style={'absolute bottom-0'}/>
+    <DadaFoot/>
     </>}/>
       </Routes>
     </Router>

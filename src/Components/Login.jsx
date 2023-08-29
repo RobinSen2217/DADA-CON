@@ -3,11 +3,13 @@ import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
 import Spinner from './Spinner'
 
-const Login = () => {
+const Login = ({sendData}) => {
     document.title='Login'
     const navigate=useNavigate()
+    
     const [loading,setLoading]=useState(false)
-  const [formData, setFormData] = useState({
+  
+    const [formData, setFormData] = useState({
     // username: '',
     email: '',
     password: '',
@@ -54,10 +56,14 @@ const Login = () => {
         axios.post('https://dadacon.onrender.com/auth/login/',{username:formData.email,password:formData.password}).then((res)=>{
             console.log(res.status)
             if (res.status===200){
+              let token=res.data.token
+              console.log(res)
+                sendData(token)
+         
                 navigate('/dada')
             }
         }).catch((errors)=>{
-            // document.write('Access denied')
+
             setLoading(false)
             setVis(1)
         })
