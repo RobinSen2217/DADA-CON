@@ -2,9 +2,10 @@ import React,{useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-function Users({data}) {
+function Users() {
+  const data=JSON.parse(localStorage.getItem('token'))
 
-const navigate=useNavigate(data)
+const navigate=useNavigate()
 
   // useEffect(async() => {
   //   // This will only run on initial render
@@ -15,8 +16,28 @@ const navigate=useNavigate(data)
   //   setLoading(false);
   // }, []);
 
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const response = await axios.get('https://dadacon.onrender.com/auth/user/',{
+        headers:{
+          'Authorization': 'Bearer '+ data
+        }
+      });
+      console.log(response)
+      // ...
+    }
+    fetchData();
+  }, []);
+
+
     const redirect=(e)=>{
       let username=e.target.id
+      // localStorage.setItem(username,JSON.stringify(['Hello']))
+
+
+
       navigate('/chat')
         // axios.post('https://dadacon.onrender.com/auth/logout/',{username:users}, {headers: {
         //   'Authorization': 'Bearer '+ data

@@ -26,7 +26,7 @@ import Chatroom from "./Components/Chatroom";
 import Users from "./Components/Users";
 
 function App() {
-const [data,sendData]=useState('')
+
 
   return (
     <Router>
@@ -44,13 +44,13 @@ const [data,sendData]=useState('')
 
     <Route exact path="/login" element={
     <>
-    <Login sendData={sendData}/>
+    <Login/>
     </>}/>
 
     <Route exact path="/dada"
     element={
       <>
-    <DadaNav data={data}/>
+    <DadaNav/>
     <DadaHero/>
     <Devices/>
     <DadaFoot/>
@@ -59,24 +59,24 @@ const [data,sendData]=useState('')
     <Route exact path="/notice"
     element={
     <>
-    <DadaNav data={data}/>
+    <DadaNav/>
     <Notices/>
     <DadaFoot/>
     </>}
     />
     <Route exact path="/device" element={<>
-    <DadaNav data={data}/>
+    <DadaNav/>
     <Device/>
     <DadaFoot/>
     </>}/>
     <Route exact path='/chat' element={<>
-    <DadaNav data={data}/>
+    <DadaNav/>
     <Chatroom/>
     <DadaFoot/>
     </>}/>
     <Route exact path='/user' element={<>
-    <DadaNav data={data}/>
-    <Users data={data}/>
+    <DadaNav/>
+    <Users/>
     <DadaFoot/>
     </>}/>
       

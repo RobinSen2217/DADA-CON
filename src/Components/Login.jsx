@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Spinner from './Spinner'
 
 const Login = ({sendData}) => {
@@ -57,9 +57,8 @@ const Login = ({sendData}) => {
             console.log(res.status)
             if (res.status===200){
               let token=res.data.token
+              localStorage.setItem('token',JSON.stringify(token))
               console.log(res)
-                sendData(token)
-         
                 navigate('/dada')
             }
         }).catch((errors)=>{

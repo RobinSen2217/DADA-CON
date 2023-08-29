@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from 'react'
 import axios from "axios";
 
@@ -73,7 +73,10 @@ const messages=['Hello']
 
 function Chatroom() {
 
-  localStorage.setItem('username',JSON.stringify(messages))
+
+    // This will only run on initial render
+    // localStorage.setItem('username',JSON.stringify(messages))
+
 
     function Encode(text) {
         if (!text || typeof text !== "string") throw new Error("Invalid input");
@@ -111,7 +114,7 @@ function Chatroom() {
         }
         // document.getElementById('wall').innerHTML+= `<div class="p-3 rounded-lg"><div class="flex items-center justify-start flex-row-reverse"><div class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0">ME</div><div class="relative mr-3 text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"><div>${message} ?</div></div></div></div>`
         messages.push(message)
-        localStorage.setItem('username',JSON.stringify(['Hello']))
+        localStorage.setItem('username',JSON.stringify(messages))
         setMessage('')
 
         await axios.post('http://localhost:5000/message',{
@@ -144,7 +147,7 @@ function Chatroom() {
 
       <div class="flex flex-col flex-auto h-[500px] p-6">
         <div
-          class="flex flex-col flex-auto w-10/12 rounded-2xl bg-gray-100 h-full p-4"
+          class="flex flex-col flex-auto w-10/12 rounded-2xl bg-[url('/chatBG.jpg')] h-full p-4"
         >
           <div class="flex flex-col h-full overflow-x-auto mb-4">
             <div class="flex flex-col h-full">
