@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
@@ -6,7 +6,18 @@ import axios from 'axios';
 function DadaNav() {
 const data=JSON.parse(localStorage.getItem('token'))
 
-
+async function fetchData() {
+  // You can await here
+  const response = await axios.get('https://dadacon.onrender.com/user/',{
+    headers:{
+      'Authorization': 'Bearer '+ data
+    }
+  });
+  setUser(response.data.username)
+  console.log(response.data)
+  console.log(user)
+  // ...
+}
 
   function changeFavicon(src) {
     var link = document.createElement('link'),
@@ -37,7 +48,7 @@ const data=JSON.parse(localStorage.getItem('token'))
     })
    }
 
-  document.body.style.backgroundImage='linear-gradient(to bottom,#00004d,#adbed9)'
+  document.body.style.backgroundImage='url(/bgcompressed.png)'
   document.title='DADA-CON'
   return (
     <div>

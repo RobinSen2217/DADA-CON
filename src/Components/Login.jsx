@@ -6,7 +6,8 @@ import Spinner from './Spinner'
 const Login = ({sendData}) => {
     document.title='Login'
     const navigate=useNavigate()
-    
+
+
     const [loading,setLoading]=useState(false)
   
     const [formData, setFormData] = useState({
