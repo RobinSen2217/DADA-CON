@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
@@ -80,7 +79,7 @@ function App() {
     <Users/>
     {/* <DadaFoot/> */}
     </>}/>
-    <Route exact path='/aafia' element={<>
+    <Route exact path='/suspect-recognition' element={<>
     <DadaNav/>
     <FaceRecog/>
     </>}/>
